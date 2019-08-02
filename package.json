@@ -1,0 +1,20 @@
+{
+  "name": "curso-cypress",
+  "version": "1.0.0",
+  "description": "Curso de Cypress da Escola TAT",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [
+    "cypress",
+    "test",
+    "automation",
+    "e2e"
+  ],
+  "author": "Walmyr Filho",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^3.4.1"
+  }
+}
