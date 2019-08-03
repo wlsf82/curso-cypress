@@ -45,7 +45,7 @@ describe("Tickets", () => {
       .clear()
       .type("talkingabouttesting@gmail.com");
 
-      cy.get("#email.invalid").should("not.exist");
+    cy.get("#email.invalid").should("not.exist");
   });
 
   it("fills and reset the form", () => {
