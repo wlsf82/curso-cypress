@@ -95,4 +95,18 @@ describe("Tickets", () => {
 
     cy.get("@submitButton").should("be.disabled");
   });
+
+  it("successfully submits the form", () => {
+    const customer = {
+      firstName: "João",
+      lastName: "Silva",
+      email: "joaosilva@example.com"
+    };
+
+    cy.fillMandatoryFields(customer);
+
+    cy.contains("Confirm Tickets").click();
+
+    cy.get(".success p").should("contain", "Ticket(s) successfully ordered.");
+  });
 });
