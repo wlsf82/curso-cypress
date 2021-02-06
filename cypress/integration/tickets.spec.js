@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe("Tickets", () => {
   beforeEach(() => cy.visit("https://bit.ly/2XSuwCW"));
 
@@ -96,17 +98,19 @@ describe("Tickets", () => {
     cy.get("@submitButton").should("be.disabled");
   });
 
-  it("successfully submits the form", () => {
-    const customer = {
-      firstName: "João",
-      lastName: "Silva",
-      email: "joaosilva@example.com"
-    };
+  Cypress._.times(5, () => {
+    it.only("successfully submits the form", () => {
+      const customer = {
+        firstName: "João",
+        lastName: "Silva",
+        email: "joaosilva@example.com"
+      };
 
-    cy.fillMandatoryFields(customer);
+      cy.fillMandatoryFields(customer);
 
-    cy.contains("Confirm Tickets").click();
+      cy.contains("Confirm Tickets").click();
 
-    cy.get(".success p").should("contain", "Ticket(s) successfully ordered.");
+      cy.get(".success p").should("contain", "Ticket(s) successfully ordered.");
+    });
   });
 });
